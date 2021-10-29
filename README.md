@@ -3,7 +3,7 @@ Programming in life science Lab
 
 
 #potential code looking through human genes that account for tumour suppressor genes
-------------------------------
+%%
 SELECT ?gene #?geneLabel
 WHERE
 {
@@ -13,4 +13,4 @@ WHERE
         wdt:P31 wd:Q181257          # within tumour suppressor genes?
    #SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
 }
-------------------------------
+%%
