@@ -1,4 +1,3 @@
 # PRA3006
 edit 
-michal = 0;
-boolean julian = false;
+Programming in life science Lab
