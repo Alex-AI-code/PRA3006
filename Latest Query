@@ -1,0 +1,21 @@
+`
+SELECT ?cancer (sample(?medication) as ?med) (sample(?cancerLabel) as ?cL) (sample(?medicationLabel) as ?mL)
+WHERE
+{
+  ?cancer wdt:P1995 wd:Q162555.  
+  
+  ?cancer rdfs:label ?cancerLabel.
+  filter(lang(?cancerLabel)='en')
+  
+  ?gene wdt:P2293 ?cancer.
+  ?cancer wdt:P2176 ?medication.
+  
+  ?medication rdfs:label ?medicationLabel.
+  filter(lang(?medicationLabel)='en')
+  
+   SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
+GROUP BY ?cancer ?medication
+ORDER BY ASC(?mL)
+`
+//Akboi
