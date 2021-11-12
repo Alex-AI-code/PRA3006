@@ -1,21 +1,29 @@
-`
-SELECT ?cancer (sample(?medication) as ?med) (sample(?cancerLabel) as ?cL) (sample(?medicationLabel) as ?mL)
+
+SELECT ?cancer ?dose (sample(?medication) as ?med) (sample(?cancerLabel) as ?cL) (sample(?medicationLabel) as ?mL) 
 WHERE
 {
+  #store all types of health specialities within oncology(cancer)
   ?cancer wdt:P1995 wd:Q162555.  
   
   ?cancer rdfs:label ?cancerLabel.
   filter(lang(?cancerLabel)='en')
   
+  #to get rid of general cancer items we look specific into the genetic associations.
   ?gene wdt:P2293 ?cancer.
+  
+  #now look into the medication used for these cancer types
   ?cancer wdt:P2176 ?medication.
   
   ?medication rdfs:label ?medicationLabel.
   filter(lang(?medicationLabel)='en')
   
+  ?medication wdt:P4250 ?dose.
+  
+  
+  
    SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
 }
-GROUP BY ?cancer ?medication
+GROUP BY ?cancer ?medication ?dose
 ORDER BY ASC(?mL)
-`
+
 //Akboi
