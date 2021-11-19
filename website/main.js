@@ -57,21 +57,4 @@ async function get_data() {
   const simpleResults = wdk.simplify.sparqlResults(results);
 
   return simpleResults;
-
-  // count(simpleResults);
-  // vis(simpleResults)
-
-  // data = JSON.stringify(
-  //   simpleResults,
-  //   undefined,
-  //   2
-  // );
-
-  // vis(JSON.parse(data))
-}
-
-async function waitForPromise(promise) {
-  // let result = await any Promise, like:
-  let result = await Promise.resolve(promise);
-  return result;
 }
