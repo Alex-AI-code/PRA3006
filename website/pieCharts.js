@@ -57,6 +57,3 @@ function update(data) {
   // remove the group that is not present anymore
   u.exit().remove();
 }
-
-// Initialize the plot with the first dataset
-update(data1);
