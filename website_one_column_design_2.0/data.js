@@ -3,28 +3,36 @@ var prostate_cancer_str = ["prostate cancer"];
 var kidney_cancer_str = ["kidney cancer"];
 var melanoma_str = ["melanoma"];
 var all = ["melanoma", "kidney cancer", "prostate cancer", "breast cancer"];
+var div_names = ["Title_pie", "Title_bar_chart"];
 
 function extractData(data, cancer_labels) {
-  var cancer_dose = {
-    gram: 0,
-    milligram: 0,
-    macrogram: 0,
-  };
+  var cancer_dose_raw = [
+    { label: "gram", value: 0 },
+    { label: "milligram", value: 0 },
+    { label: "microgram", value: 0 },
+  ];
+
   for (cancer = 0; cancer < cancer_labels.length; cancer++) {
     for (i = 0; i < data.length; i++) {
       if (data[i]["cancer"]["label"] == cancer_labels[cancer]) {
         switch (data[i]["unitsLabel"]) {
           case "gram":
-            cancer_dose.gram = cancer_dose.gram + 1;
+            cancer_dose_raw[0].value += 1;
             break;
           case "milligram":
-            cancer_dose.milligram = cancer_dose.milligram + 1;
+            cancer_dose_raw[1].value += 1;
             break;
           case "microgram":
-            cancer_dose.macrogram = cancer_dose.macrogram + 1;
+            cancer_dose_raw[2].value += 1;
             break;
         }
       }
+    }
+  }
+  cancer_dose = [];
+  for (i = 0; i < cancer_dose_raw.length; i++) {
+    if (cancer_dose_raw[i].value != 0) {
+      cancer_dose.push(cancer_dose_raw[i]);
     }
   }
   return cancer_dose;
@@ -35,9 +43,9 @@ function get_max(cancer_dose) {
   var dominant_unit = { unit: "", value: 0 };
 
   for (let i = 0; i < Object.entries(cancer_dose).length; i++) {
-    if (Object.values(cancer_dose)[i] > max) {
-      max = Object.values(cancer_dose)[i];
-      dominant_unit.unit = Object.keys(cancer_dose)[i];
+    if (cancer_dose[i].value > max) {
+      max = cancer_dose[i].value;
+      dominant_unit.unit = cancer_dose[i].label;
       dominant_unit.value = max;
     }
   }
@@ -118,6 +126,12 @@ function extract_drug_info(data, cancer_labels, dominant_unit) {
   return drugs;
 }
 
+function showTitle(Title_text, div_id) {
+  for (i = 0; i < Title_text.length; i++) {
+    document.getElementById(div_id[i]).innerHTML = Title_text[i];
+  }
+}
+
 function main() {
   get_data()
     .then((data) => {
@@ -129,7 +143,9 @@ function main() {
       kidney_cancer_forPie = extractData(data, kidney_cancer_str);
       all_forPie = extractData(data, all);
 
+      console.log(breast_cancer_forPie);
       dominant_BC = get_max(breast_cancer_forPie);
+      console.log(dominant_BC);
       dominant_PC = get_max(prostate_cancer_forPie);
       dominant_M = get_max(melanoma_forPie);
       dominant_KC = get_max(kidney_cancer_forPie);
@@ -149,8 +165,6 @@ function main() {
       bar_chart_melanoma = extract_drug_info(data, melanoma_str, dominant_M);
       bar_chart_KC = extract_drug_info(data, kidney_cancer_str, dominant_KC);
       bar_chart_all = extract_drug_info(data, all, dominant_all);
-
-      console.log(bar_chart_all);
     })
     .catch((error) => {
       console.log("Something went wrong...", error);

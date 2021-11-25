@@ -53,26 +53,26 @@ var mouseleave_pie = function (d) {
   d3.select(this).style("stroke", "none").style("opacity", 0.8);
 };
 // A function that create / update the plot for a given variable:
-function show_title(label) {
-  console.log("Inside ", is_title);
-  if (!is_title) {
-    text = d3
-      .select("#my_dataviz")
-      .append("text")
-      .style("font-size", "20px")
-      // .style("margin", "35%")
-      .text("Dosages for " + label);
-  } else {
-    new_text = d3.select("text").text("Dosages for " + label);
-  }
-  is_title = true;
-}
+// function show_title(label) {
+//   console.log("Inside ", is_title);
+//   if (!is_title) {
+//     text = d3
+//       .select("#my_dataviz")
+//       .append("text")
+//       .style("font-size", "20px")
+//       // .style("margin", "35%")
+//       .text("Dosages for " + label);
+//   } else {
+//     new_text = d3.select("text").text("Dosages for " + label);
+//   }
+//   is_title = true;
+// }
+
 function update(data) {
   // Compute the position of each group on the pie:
   var pie = d3
     .pie()
     .value(function (d) {
-      console.log("d: ", d.value);
       return d.value;
     })
     .sort(function (a, b) {

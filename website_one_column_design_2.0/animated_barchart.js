@@ -11,9 +11,9 @@ var data2 = [
   { group: "D", value: 10 },
 ];
 
-var margin = { top: 30, right: 0, bottom: 70, left: 0 },
-  width = 2 * 460 - margin.left - margin.right,
-  height = 2 * 400 - margin.top - margin.bottom;
+var margin = { top: 30, right: 0, bottom: 220, left: 50 },
+  width = 2 * 550 - margin.left - margin.right,
+  height = 2 * 480 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg_animated_bar = d3
@@ -35,11 +35,11 @@ var y = d3.scaleLinear().domain([1000, 0]).range([height, 0]);
 var yAxis = svg_animated_bar.append("g").attr("class", "myYaxis");
 
 // create a tooltip
-var Tooltip2 = d3
+var Tooltip_bar_chart = d3
   .select("#my_bar_chart")
   .append("div")
   .style("opacity", 10)
-  .attr("class", "tooltip")
+  .attr("class", "tooltip_bar_chart")
   .style("background-color", "white")
   .style("border", "solid")
   .style("border-width", "2px")
@@ -47,19 +47,24 @@ var Tooltip2 = d3
   .style("padding", "5px");
 
 // Three function that change the tooltip when user hover / move / leave a cell
-var mouseover = function (d) {
-  Tooltip2.style("opacity", 1);
+var mouseover_bar = function (d, i) {
+  Tooltip_bar_chart.style("opacity", 1);
   d3.select(this).style("stroke", "black").style("opacity", 1);
+  console.log(d);
+  d3.select(this.parentNode).attr(
+    "xlink:href",
+    "https://www.wikidata.org/wiki/" + d.group
+  );
 };
 
 // -900 for scuffed method of centering the tooltip
-var mousemove = function (d) {
-  Tooltip2.html("Value " + d.value + "<br> Name: " + d.group)
-    .style("left", d3.mouse(this)[0] + -900 + "px")
-    .style("top", d3.mouse(this)[1] + "px");
+var mousemove_bar = function (d) {
+  Tooltip_bar_chart.html("Value " + d.value + "<br> Name: " + d.group)
+    .style("left", d3.mouse(this)[0] + -1000 + "px")
+    .style("top", d3.mouse(this)[1] + -10 + "px");
 };
-var mouseleave = function (d) {
-  Tooltip2.style("opacity", 0);
+var mouseleave_bar = function (d) {
+  Tooltip_bar_chart.style("opacity", 0);
   d3.select(this).style("stroke", "none").style("opacity", 0.8);
 };
 
@@ -85,12 +90,6 @@ function get_min_graphs(data) {
 
 // A function that create / update the plot for a given variable:
 function update_animated_bar_chart(data) {
-  // TODO: fix this
-  var scale = d3
-    .scaleLinear()
-    .domain([get_min_graphs(data), get_max_graphs(data)])
-    .range([height / 2, 0]);
-
   // Update the X axis
   x.domain(
     data.map(function (d) {
@@ -103,6 +102,7 @@ function update_animated_bar_chart(data) {
     .style("text-anchor", "end")
     .attr("dx", "-.8em")
     .attr("dy", ".15em")
+    .attr("font-size", "20px")
     .attr("transform", "rotate(-65)");
 
   // Update the Y axis
@@ -113,12 +113,18 @@ function update_animated_bar_chart(data) {
     }),
   ]);
 
-  yAxis.transition().duration(1000).call(d3.axisLeft(y));
+  yAxis
+    .transition()
+    .duration(1000)
+    .call(d3.axisLeft(y))
+    .selectAll("text")
+    .attr("font-size", "15px");
 
   // Create the u variable
   var u = svg_animated_bar.selectAll("rect").data(data);
 
   u.enter()
+    .append("a")
     .append("rect") // Add a new rect for each new elements
     .merge(u) // get the already existing elements as well
     .transition() // and apply changes to all of them
@@ -139,7 +145,7 @@ function update_animated_bar_chart(data) {
   u.exit().remove();
 
   var v = svg_animated_bar.selectAll("rect").data(data);
-  v.on("mouseover", mouseover)
-    .on("mousemove", mousemove)
-    .on("mouseleave", mouseleave);
+  v.on("mouseover", mouseover_bar)
+    .on("mousemove", mousemove_bar)
+    .on("mouseleave", mouseleave_bar);
 }

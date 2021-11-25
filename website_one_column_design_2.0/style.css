@@ -41,9 +41,9 @@ h1 {
   background-color: #04aa6d;
   color: white;
 }
-button {
-  border: none;
-  color: white;
+.container_buttons button {
+  border: black;
+  border-width: 5px;
   padding: 20px 40px;
   text-align: center;
   text-decoration: none;
@@ -57,36 +57,23 @@ button {
   display: inline;
 }
 
-.button1 {
-  background-color: white;
-  color: black;
-  border: 2px solid #4caf50;
-}
-
-.button1:hover {
+.container_buttons button:hover {
   background-color: #4caf50;
   color: white;
 }
 
-.button2 {
-  background-color: white;
+.backToTheTop {
+  margin: auto;
+  display: block;
 
-  color: black;
-  border: 2px solid #008cba;
-}
-
-.button2:hover {
-  background-color: #008cba;
-  color: white;
-}
-.button3 {
   background-color: white;
+  align-self: center;
 
   color: black;
   border: 2px solid #00fa21;
 }
 
-.button3:hover {
+.backToTheTop:hover {
   background-color: #91c41c;
   color: white;
 }
@@ -96,28 +83,14 @@ button {
 }
 
 .textBox {
-  width: 50%;
-  margin-left: 25%;
-  text-align: justify;
+  display: flex;
+  justify-content: center;
 }
-#footer {
-  clear: both;
-  border: 1px groove #aaaaaa;
-  background: rgb(94, 94, 97);
-  color: White;
-  padding: 0;
-  text-align: center;
-  vertical-align: middle;
-  line-height: normal;
-  margin: 0;
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-}
-.tooltip {
+
+.tooltip_bar_chart {
   position: relative;
-  width: 80px;
-  height: 40px;
+  width: 100px;
+  height: 50px;
   padding: 8px;
   margin-top: -20px;
   font: 10px sans-serif;
@@ -142,7 +115,95 @@ button {
   display: flex;
   justify-content: center;
 }
-#vis_pie {
+#my_pie_chart {
+  height: 500px;
+  /* align-items: center; */
   display: flex;
   justify-content: center;
+}
+
+#box {
+  height: 1000px;
+}
+
+#Title_pie {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 200%;
+}
+
+#Title_bar_chart {
+  text-align: center;
+  font-size: 200%;
+}
+
+.footer-basic {
+  padding: 40px 0;
+  background-color: #1a9c80;
+  color: #4b4c4d;
+}
+
+.footer-basic ul {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.footer-basic li {
+  padding: 0 10px;
+}
+
+.footer-basic ul a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity: 1;
+}
+
+.footer-basic .social {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.footer-basic .social > a {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin: 0 8px;
+  color: inherit;
+  opacity: 0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity: 0.9;
+}
+
+.footer-basic .copyright {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 0;
+}
+
+path.slice {
+  stroke-width: 2px;
+}
+
+polyline {
+  opacity: 0.3;
+  stroke: black;
+  stroke-width: 2px;
+  fill: none;
 }
