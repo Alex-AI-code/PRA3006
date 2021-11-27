@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Example</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Initialize a global WBK function -->
+    <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikibase-sdk.min.js"></script>
+
+    <!-- Initialize a global wdk object using the WBK object -->
+    <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikidata-sdk.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Import D3 visulaization library -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Load the js scripts -->
+    <script src="main.js"></script>
+    <script src="data.js"></script>
+    <script src="animated_barchart.js"></script>
+
+    <!-- Color scale -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+    <!-- Create a div where the graph will take place -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="header">
+        <h1>Programming in Life Sciences</h1>
+        <p>Different drug dosages for cancer</p>
+      </div>
+
+      <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="druginfo.html">Drug info</a>
+        <a href="sparql.html">SPARQL</a>
+        <a href="Contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </div>
+    </header>
+
+    <div class="container_instructions">
+      <h1>How does it work?</h1>
+      <div class="textBox">
+        <p class="paragraph">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+          velit voluptas beatae dignissimos sint, neque, a maiores quas, odio
+          aperiam natus nisi consequatur molestiae labore sunt enim minus
+          temporibus ex! Lorem ipsum dolor, sit amet consectetur adipisicing
+          elit. Eius adipisci cum esse quo hic fugiat temporibus similique
+          impedit ad dolor! Itaque quo aliquid omnis at accusamus veniam rerum
+          suscipit voluptatibus!
+        </p>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="container_selection">
+      <h2 style="text-align: center">Choose a disease</h2>
+
+      <div class="container_buttons">
+        <button
+          class="button1"
+          onclick="update(breast_cancer_forPie);update_animated_bar_chart(bar_chart_data_BC); show_title(breast_cancer_str)"
+        >
+          Breast Cancer
+        </button>
+        <button
+          class="button2"
+          onclick="update(prostate_cancer_forPie);update_animated_bar_chart(bar_chart_data_PC); show_title(prostate_cancer_str)"
+        >
+          Prostate Cancer
+        </button>
+        <button
+          class="button3"
+          onclick="update(melanoma_forPie);update_animated_bar_chart(bar_chart_melanoma); show_title(melanoma_str)"
+        >
+          Melanoma
+        </button>
+        <button
+          class="button1"
+          onclick="update(kidney_cancer_forPie);update_animated_bar_chart(bar_chart_KC); show_title(kidney_cancer_str)"
+        >
+          Kidney cancer
+        </button>
+        <button
+          class="button1"
+          onclick="update(all_forPie);update_animated_bar_chart(bar_chart_all);"
+        >
+          Plot all
+        </button>
+      </div>
+
+      <hr />
+    </div>
+
+    <div id="vis_pie">
+      <div id="my_dataviz"></div>
+    </div>
+    <div style="text-align: center">
+      <h2>Title</h2>
+    </div>
+
+    <script>
+      main();
+    </script>
+
+    <script src="pieCharts.js"></script>
+
+    <hr />
+
+    <div id="box">
+      <div id="my_bar_chart"></div>
+    </div>
+
+    <script src="animated_barchart.js"></script>
+
+    <div class="footer" id="footer">My Footer</div>
+  </body>
+</html>

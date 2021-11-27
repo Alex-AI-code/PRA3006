@@ -1,0 +1,411 @@
+
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+}
+
+.paragraph {
+  font-family: "Courier New", Courier, monospace;
+}
+.container_buttons {
+  position: center;
+}
+
+.header {
+  padding: 10px;
+  text-align: center;
+  background: #10c5a1;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+button {
+  border: none;
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 1%;
+  margin-left: 1%;
+  margin-top: 1%;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  display: inline;
+  border-radius: 10px;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4caf50;
+}
+
+.button1:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+.button2 {
+  background-color: white;
+
+  color: black;
+  border: 2px solid #008cba;
+}
+
+.button2:hover {
+  background-color: #008cba;
+  color: white;
+}
+.button3 {
+  background-color: white;
+
+  color: black;
+  border: 2px solid #00fa21;
+}
+
+.button3:hover {
+  background-color: #91c41c;
+  color: white;
+}
+
+.container_selection {
+  text-align: center;
+}
+
+.textBox {
+  width: 50%;
+  margin-left: 25%;
+  text-align: justify;
+}
+#footer {
+  clear: both;
+  border: 1px groove #aaaaaa;
+  background: rgb(94, 94, 97);
+  color: White;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  line-height: normal;
+  margin: 0;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+.tooltip {
+  position: relative;
+  width: 80px;
+  height: 40px;
+  padding: 8px;
+  margin-top: -20px;
+  font: 10px sans-serif;
+  background: #ddd;
+  pointer-events: none;
+  text-align: center;
+}
+
+.tooltip_pie {
+  position: relative;
+  width: 80px;
+  height: 40px;
+  padding: 8px;
+  margin-top: -20px;
+  font: 10px sans-serif;
+  background: #ddd;
+  pointer-events: none;
+  text-align: center;
+}
+
+/*----------------------Contact css-----------------------*/
+
+/* we want the contact us box section to cover 80% */
+.container
+{
+width: 80%;
+margin: 50px auto;
+}
+
+.contactBox{
+  background: #fff;
+  display: flex;
+  border-radius: 10px;
+}
+
+.left_contact{
+  flex-basis: 60%;
+  padding: 40px 60px;
+}
+
+.right_contact{
+  flex-basis: 40%;
+  padding: 40px;
+  background:#10c5a1;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.row_input{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.row_input .group_input{
+  flex-basis: 45%;
+}
+
+input{
+  width:100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  padding-bottom: 5px;
+
+}
+
+textarea{
+  width: 100%;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box; /*fits to the border of the rest of the box*/
+}
+
+.submit_button{
+  background-color: white;
+  color: black;
+  border: 2px solid blue;
+  margin-top: 20px;
+  box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);/*copied from online, just trying out some shadows*/
+}
+
+label{
+  margin-bottom: 6px;
+  display: block;
+  color: blue;
+}
+
+/*space the title */
+
+.container p {
+  margin-bottom: 40px;
+}
+
+.left_contact h3{
+  color: blue;
+  margin-bottom: 40px;
+  font-size:x-large;
+  
+}
+
+.right_contact h3{
+  margin-bottom: 40px;
+  font-size:x-large;
+}
+
+/*to space it out. first-child checks to see if the element is the first child of its parent*/
+tr td:first-child{
+  padding-right: 20px;
+}
+
+tr td{
+  padding-top: 20px;
+}
+
+/*-----------------------swiper styles----------------------*/
+.drugtitle{
+  text-align: center;
+  
+}
+
+.exinfo{
+  text-align:center;
+  font-size: 20px;
+  
+  color: gray;
+}
+
+.card{
+  position: relative;
+  width: 400px;
+  height: 500px;
+  margin:auto;
+  border: 5px solid black;
+  border-radius: 10px;
+}
+
+.card .drugtext{
+  width: 400px;
+  padding: 30px;
+  box-sizing: border-box;
+
+}
+
+/*read more button*/
+.card .drugtext a{
+  display: inline-block;
+  margin: 10px 0 0;
+  padding: 10px 20px; 
+  text-decoration: none;
+  border:2px solid black;
+  border-radius: 10px;
+  color: black;
+}
+
+/*keep the upper section white*/
+.card .drugimage{
+  background:white;
+  border-radius: 10px;
+}
+
+/*centre image*/
+.card .drugimage img{
+  display: block; /*removes any extra space*/ 
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 20px;
+  max-height: 200px;
+  max-width: 100%;
+  min-width: 80%; 
+}
+
+/*add text on top of image*/
+.card .top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-weight: 500;
+}
+
+/*set max width so it doesnt look ugly*/
+.swiper-slide{
+  max-width: 400px;
+}
+
+.swiper-wrapper{
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.swiper-container{
+  padding-top: 30px;
+  width: 100%;
+  /*the code in the line below saved my sanity*/
+  position: fixed;
+}
+
+/*-----------------------about page------------------------*/
+
+.aboutcontainer{
+  text-align: center;
+  background: #f5f5f5;
+}
+
+.title{
+  padding-top: 60px;
+  color: #444;
+  font-size: 20px;
+  margin: auto;
+  line-height: 50px;
+}
+
+.membercontainer{
+  max-width: 100%;
+  margin: auto;
+  padding: 48px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.members{
+  margin: 10px;
+  padding: 20px;
+  max-width: 30%;
+  cursor: pointer;
+  transition: .4s;
+  box-sizing: border-box;
+  /* background-color: #ddd; */
+  border-radius: 30px;
+}
+
+.members:hover{
+  background-color: #10c5a16b ;
+}
+
+.members img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50px;
+}
+
+.name{
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.role{
+  font-style: italic;
+  color: #777;
+}
+
+.info{
+  margin: 20px 0;
+  max-width: 400px;
+  font-weight: lighter;
+  color: #444;
+}
+
+.socialmedia{
+  margin: 10px;
+}
+
+.socialmedia a {
+  display: inline-block;
+}
+
+.socialmedia a i {
+  color: #008cba;
+  margin: 5px;
+}
+
+.socialmedia a :hover{
+  transform: scale(2);
+}
+
+#my_bar_chart {
+  display: flex;
+  justify-content: center;
+}
+#vis_pie {
+  display: flex;
+  justify-content: center;
+}
