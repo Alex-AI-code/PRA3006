@@ -1,0 +1,105 @@
+/*-----------------------swiper styles----------------------*/
+.drugtitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.exinfo {
+  text-align: center;
+  font-size: 20px;
+
+  color: gray;
+}
+
+.card {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  margin: auto;
+  border: 5px solid black;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.card .drugtext {
+  position: relative;
+  text-align: justify;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/*read more button*/
+.card .drugtext a {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: black;
+}
+
+/*keep the upper section white*/
+.card .drugimage {
+  background: white;
+  border-radius: 10px;
+}
+
+/*centre image*/
+.card .drugimage img {
+  display: block; /*removes any extra space*/
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: 10%;
+  max-height: 100px;
+  max-width: 200px;
+
+  width: auto;
+  height: auto;
+}
+
+/*add text on top of image*/
+.card .top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-weight: 500;
+}
+
+/*set max width so it doesnt look ugly*/
+.swiper-slide {
+  max-width: 400px;
+}
+
+.swiper-wrapper {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.swiper-container {
+  padding-top: 30px;
+  width: 100%;
+  /*the code in the line below saved my sanity*/
+  position: absolute;
+}
+
+.disclaimer_container {
+  /* margin: 25px; */
+  width: 100%;
+  height: 500px;
+}
+.disclaimer_text {
+  width: 50%;
+  text-align: justify;
+  /* Center horizontally*/
+  margin: 0 auto;
+}
+.buttons_container {
+  width: 50%;
+  /* Center horizontally*/
+  margin: 0 auto;
+}

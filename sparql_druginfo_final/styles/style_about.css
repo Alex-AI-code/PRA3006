@@ -1,0 +1,89 @@
+/*-----------------------about page------------------------*/
+
+.aboutcontainer {
+  text-align: center;
+}
+
+.title {
+  padding-top: 60px;
+  color: #444;
+  font-size: 20px;
+  margin: auto;
+  line-height: 50px;
+}
+
+.membercontainer {
+  max-width: 100%;
+  margin: auto;
+  padding: 48px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.members {
+  margin: 10px;
+  padding: 20px;
+  max-width: 30%;
+  cursor: pointer;
+  transition: 0.4s;
+  box-sizing: border-box;
+  /* background-color: #ddd; */
+  border-radius: 30px;
+}
+
+.members:hover {
+  background-color: #f4a3616e;
+}
+
+.members img {
+  /* display: block; */
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  border-radius: 50px;
+}
+
+.name {
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.role {
+  font-style: italic;
+  color: #777;
+}
+
+.info {
+  text-align: justify;
+  max-width: 400px;
+  font-weight: lighter;
+  color: #444;
+}
+
+.socialmedia {
+  margin: 10px;
+}
+
+.socialmedia a {
+  display: inline-block;
+}
+
+.socialmedia a i {
+  color: #008cba;
+  margin: 5px;
+}
+
+.socialmedia a :hover {
+  transform: scale(2.5);
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
