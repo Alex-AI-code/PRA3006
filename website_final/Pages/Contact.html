@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Contact</title>
+
+    <meta charset="UTF-8" />
+
+    <!-- Load the styles -->
+    <link rel="stylesheet" href="../styles/style_general.css" />
+    <link rel="stylesheet" href="../styles/style_contact.css" />
+
+    <!-- For footer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body class="myBody">
+    <!-- Header -->
+    <header>
+      <div class="header">
+        <a href="home.html" style="color: white"
+          ><h1>Programming in Life Sciences</h1></a
+        >
+        <p class="subheader">Different drug dosages for cancer</p>
+      </div>
+
+      <!-- Navigation bar -->
+      <div class="topnav">
+        <div class="topnav-centered">
+          <a href="home.html">Home</a>
+          <a href="druginfo.html">Drug info</a>
+          <a href="sparql.html">SPARQL</a>
+          <a class="active" href="#contact">Contact</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </header>
+
+    <!--indpired by https://www.youtube.com/c/EasyTutorialsVideo/about -->
+    <!--box with both sections-->
+    <h2 class="my_h2">Contact us!</h2>
+    <p class="my_p">Tell us what you think... We love to hear some feedback!</p>
+
+    <div class="container">
+      <div class="contactBox">
+        <div class="left_contact">
+          <h3>Send us your suggestions!</h3>
+          <!--formspree allows emails to be actually sent to you-->
+          <form
+            id="contactform"
+            action="https://formspree.io/f/xwkyepry"
+            method="POST"
+          >
+            <!--input section for text-->
+            <div class="row_input">
+              <div class="group_input">
+                <label>Name</label>
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="e.g John smith"
+                  required
+                />
+              </div>
+              <div class="group_input">
+                <label>Phone</label>
+                <input
+                  name="_formsubmit_ID"
+                  type="text"
+                  placeholder="+31 644 571 618"
+                />
+              </div>
+            </div>
+            <!--second row-->
+            <div class="row_input">
+              <div class="group_input">
+                <label>Email</label>
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="hoken0903@gmail.com"
+                  required
+                />
+              </div>
+              <div class="group_input">
+                <label>Suggestion title</label>
+                <input name="comment" type="text" placeholder="Font size" />
+              </div>
+            </div>
+            <!--a message section-->
+            <label>Message</label>
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your message"
+              required
+            ></textarea>
+
+            <!--button to submit-->
+            <button class="NotAkiyaButtons" type="submit">SEND</button>
+          </form>
+        </div>
+
+        <!--make a blue box on the right side, ontop of container-->
+        <div class="right_contact">
+          <h3>Reach us here</h3>
+          <table>
+            <!--making a table tr=table row, td= table data-->
+            <tr>
+              <td>Email</td>
+              <td>hoken0903@gmail.com</td>
+            </tr>
+            <tr>
+              <td>Phone</td>
+              <td>0644 571 618</td>
+            </tr>
+            <tr>
+              <td>Address</td>
+              <td>
+                6214AV, Willem Vliegenstraat 92 <br />
+                Maastricht
+              </td>
+              <!--br goes to next line-->
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-basic">
+      <footer>
+        <div class="social">
+          <a href="https://www.instagram.com"
+            ><i class="icon ion-social-instagram"></i
+          ></a>
+          <a href="https://twitter.com/home?lang=en"
+            ><i class="icon ion-social-twitter"></i
+          ></a>
+          <a href="https://www.facebook.com"
+            ><i class="icon ion-social-facebook"></i
+          ></a>
+        </div>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="https://github.com/Alex-AI-code/PRA3006">GitHub</a>
+          </li>
+        </ul>
+        <div width="100%" style="text-align: center; margin-top: 1%">
+          <a id="backToTop" href="#top">Back to the top</a>
+        </div>
+        <p class="copyright">PRA3006 © 2021</p>
+      </footer>
+    </div>
+  </body>
+</html>

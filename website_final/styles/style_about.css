@@ -1,0 +1,73 @@
+/*-----------------------about page------------------------*/
+
+.aboutcontainer {
+  text-align: center;
+}
+
+.membercontainer {
+  max-width: 100%;
+  margin: auto;
+  margin-top: 3%;
+  padding: 48px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.members {
+  margin: 10px;
+  padding: 20px;
+  max-width: 30%;
+  cursor: pointer;
+  transition: 0.4s;
+  box-sizing: border-box;
+  border-radius: 30px;
+}
+
+.members:hover {
+  background-color: #10c5a16b;
+}
+
+.members img {
+  /* display: block; */
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  border-radius: 50px;
+}
+
+.name {
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.role {
+  font-style: italic;
+  color: #777;
+}
+
+.info {
+  text-align: justify;
+  max-width: 400px;
+  font-weight: lighter;
+  color: #444;
+}
+
+.socialmedia {
+  margin: 10px;
+}
+
+.socialmedia a {
+  display: inline-block;
+}
+
+.socialmedia a i {
+  color: #008cba;
+  margin: 5px;
+}
+
+.socialmedia a :hover {
+  transform: scale(2.5);
+}

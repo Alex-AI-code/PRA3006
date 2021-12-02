@@ -1,0 +1,100 @@
+/*----------------------Contact page-----------------------*/
+
+/* override some options */
+.my_p {
+  font-style: italic;
+  text-align: center;
+}
+
+/* Contact box */
+/* we want the contact us box section to cover 80% */
+.container {
+  width: 80%;
+  margin-bottom: 5%;
+}
+
+.contactBox {
+  background: #fff;
+  display: flex;
+  border-radius: 10px;
+}
+
+.left_contact {
+  flex-basis: 60%;
+  padding: 40px 60px;
+}
+
+.right_contact {
+  flex-basis: 40%;
+  padding: 40px;
+  background: #10c5a1;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.row_input {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.row_input .group_input {
+  flex-basis: 45%;
+}
+
+input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  padding-bottom: 5px;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box; /*fits to the border of the rest of the box*/
+}
+
+.submit_button {
+  background-color: white;
+  color: black;
+  border: 2px solid blue;
+  margin-top: 20px;
+  box-shadow: 0px 5px 15px 0px rgba(28, 0, 181, 0.3); /*copied from online, just trying out some shadows*/
+}
+
+label {
+  margin-bottom: 6px;
+  display: block;
+  color: blue;
+}
+
+/*space the title */
+
+.container p {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.left_contact h3 {
+  color: blue;
+  margin-bottom: 40px;
+  font-size: x-large;
+}
+
+.right_contact h3 {
+  margin-bottom: 40px;
+  font-size: x-large;
+}
+
+/*to space it out. first-child checks to see if the element is the first child of its parent*/
+tr td:first-child {
+  padding-right: 20px;
+}
+
+tr td {
+  padding-top: 20px;
+}
