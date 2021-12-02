@@ -5,13 +5,13 @@ This code is a webpage that analyses the main types of treatment used for differ
 
 - Check AUTHORS for people who contributed to the development of this website
 - Check SOURCES for the sources used in the development of this website
-- Our GitHub contains three branches: one main which has all the files, and two branches used for the submission (one test one final submission) 
+- Our GitHub contains four branches: one main which has all the files, one with License (I don't know how I created that one ;-;), and two branches used for the submission (one test one final submission) 
 - The most recent version of the website can be found under the \_\_\_ file. All the other files were uploaded throughout the practical to document the progress of the project team in developing a website to the main branch (Please don't check the early versions they are horrible).
 - Submission branches contain only the final version of the website. 
 
 ## Running the code
 
-1. Download ...
+1. Download the most recent submission (it is probably called submission final)
 2. Run homepage HTML file...
 3. Explore the drugs against cancer and their daily dosages ...
 
