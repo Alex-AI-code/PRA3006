@@ -1,6 +1,5 @@
 # Programming in life science Lab (PRA3006)
-
-Information regarding the detailed code functionality can be found in the comments of the code
+*Information regarding the detailed code functionality can be found in the comments of the code*
 
 This code is a webpage that analyses the main types of treatment used for different types of cancers and converts all the daily dosage units of those drugs into the same predominant unit to be able to make a better comparison. The information on the webpage was retrieved from Wikidata. This project was developed during the practical Programming in Life Science offered by the Maastricht Science Programme.
 
