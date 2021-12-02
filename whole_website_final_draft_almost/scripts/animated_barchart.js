@@ -1,21 +1,9 @@
-var data1 = [
-  { group: "A", value: 4 },
-  { group: "B", value: 1000 },
-  { group: "C", value: 750 },
-];
-
-var data2 = [
-  { group: "A", value: 7 },
-  { group: "B", value: 1 },
-  { group: "C", value: 20 },
-  { group: "D", value: 10 },
-];
-
+// Create some variables for dimensions
 var margin = { top: 30, right: 0, bottom: 220, left: 70 },
   width = 2 * 550 - margin.left - margin.right,
   height = 2 * 480 - margin.top - margin.bottom;
 
-// append the svg object to the body of the page
+// append the svg object to the my_bar_chart div and set its attributes
 var svg_animated_bar = d3
   .select("#my_bar_chart")
   .append("svg")
@@ -38,7 +26,7 @@ var yAxis = svg_animated_bar.append("g").attr("class", "myYaxis");
 var Tooltip_bar_chart = d3
   .select("#my_bar_chart")
   .append("div")
-  .style("opacity", 10)
+  .style("opacity", 0)
   .attr("class", "tooltip_bar_chart")
   .style("background-color", "white")
   .style("border", "solid")
@@ -47,10 +35,13 @@ var Tooltip_bar_chart = d3
   .style("padding", "5px");
 
 // Three function that change the tooltip when user hover / move / leave a cell
+// user_input is true whenever a user uses the + button and make a successfull query - we need to do this to account for the fact
+// that we probably dont have information on the drugs of the cancer that the user provided
 var mouseover_bar = function (d, i) {
   Tooltip_bar_chart.style("opacity", 1);
   d3.select(this).style("stroke", "black").style("opacity", 1);
   if (!user_input) {
+    d.group = d.group.replace(/ +/g, "");
     d3.select(this.parentNode).attr(
       "xlink:href",
       "druginfo.html#" + d.group.toLowerCase()
@@ -63,38 +54,20 @@ var mouseover_bar = function (d, i) {
   }
 };
 
-// -900 for scuffed method of centering the tooltip
+// -1000 for scuffed method of centering the tooltip - very unfortunate method
 var mousemove_bar = function (d) {
-  Tooltip_bar_chart.html("Value " + d.value + "<br> Name: " + d.group)
+  Tooltip_bar_chart.html("Value: " + d.value + "<br> Name: " + d.group)
     .style("left", d3.mouse(this)[0] + -1000 + "px")
     .style("top", d3.mouse(this)[1] + -10 + "px");
 };
+
+// What happens with each bar after we move the mouse out of it
 var mouseleave_bar = function (d) {
   Tooltip_bar_chart.style("opacity", 0);
-  d3.select(this).style("stroke", "none").style("opacity", 0.8);
+  d3.select(this).style("stroke", "none").style("opacity", 1);
 };
 
-function get_max_graphs(data) {
-  var max = 0;
-  for (i = 0; i < data.length; i++) {
-    if (data[i].value > max) {
-      max = data[i].value;
-    }
-  }
-  return max;
-}
-
-function get_min_graphs(data) {
-  var min = data[0].value;
-  for (i = 0; i < data.length; i++) {
-    if (data[i].value < min) {
-      min = data[i].value;
-    }
-  }
-  return min;
-}
-
-// A function that create / update the plot for a given variable:
+// updates the bar chart with new data without redrawing the whole thing
 function update_animated_bar_chart(data) {
   // Update the X axis
   x.domain(
@@ -129,6 +102,7 @@ function update_animated_bar_chart(data) {
   // Create the u variable
   var u = svg_animated_bar.selectAll("rect").data(data);
 
+  // append a for the hrefs
   u.enter()
     .append("a")
     .append("rect") // Add a new rect for each new elements
@@ -145,11 +119,12 @@ function update_animated_bar_chart(data) {
     .attr("height", function (d) {
       return height - y(d.value);
     })
-    .attr("fill", "#69b3a2");
+    .attr("fill", "#6cceba");
 
   // If less group in the new dataset, I delete the ones not in use anymore
   u.exit().remove();
 
+  // select all active rectangles and make them interactive by adding the following functions
   var v = svg_animated_bar.selectAll("rect").data(data);
   v.on("mouseover", mouseover_bar)
     .on("mousemove", mousemove_bar)

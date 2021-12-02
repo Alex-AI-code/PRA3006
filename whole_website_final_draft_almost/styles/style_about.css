@@ -4,17 +4,10 @@
   text-align: center;
 }
 
-.title {
-  padding-top: 60px;
-  color: #444;
-  font-size: 20px;
-  margin: auto;
-  line-height: 50px;
-}
-
 .membercontainer {
   max-width: 100%;
   margin: auto;
+  margin-top: 3%;
   padding: 48px 0;
   display: flex;
   flex-wrap: wrap;
@@ -28,7 +21,6 @@
   cursor: pointer;
   transition: 0.4s;
   box-sizing: border-box;
-  /* background-color: #ddd; */
   border-radius: 30px;
 }
 

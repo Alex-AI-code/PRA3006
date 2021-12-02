@@ -1,76 +1,62 @@
-h1 {
-  font-family: "Times New Roman", Times, serif;
-  text-align: center;
-}
-
-.betweenSection {
-  border: 5px solid #10c5a1;
-  border-radius: 2px;
-}
-
-/* Buttons */
-.container_buttons button {
-  border: black;
-  border-width: 5px;
-  padding: 20px 40px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-right: 1%;
-  margin-left: 1%;
-  margin-top: 1%;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  display: inline;
-}
-
-.container_buttons button:hover {
-  background-color: #4caf50;
-  color: white;
-}
-
-.container_selection {
-  text-align: center;
-}
-.container_instructions {
-  margin-top: 2%;
-}
-
+/*-----------------------Home page----------------------*/
+/* Holds text for the instructions */
 .textBox {
   display: flex;
   justify-content: center;
 }
 
-.tooltip_bar_chart {
-  position: relative;
-  width: 100px;
-  height: 50px;
-  padding: 8px;
-  margin-top: -20px;
-  font: 10px sans-serif;
-  background: #ddd;
-  pointer-events: none;
+/* list for the instructions */
+.large {
+  font-family: Arial, Helvetica, sans-serif;
+  counter-reset: list-counter;
+  list-style: none;
+  float: left;
+  font-size: 20px;
+}
+.large li {
+  margin: 1.5em 0;
+  line-height: 1em;
+}
+.large li:before {
+  content: counter(list-counter);
+  counter-increment: list-counter;
+  font-family: arial;
+  color: #666;
+  font: bold;
+  font-size: 2em;
+  margin-right: 0.5em;
+}
+.subpoint li::before {
+  content: none;
+}
+.subpoint {
+  margin-left: 5%;
+}
+
+/* Holds buttons */
+.container_selection {
   text-align: center;
 }
 
-.tooltip_pie {
-  position: relative;
-  width: 80px;
-  height: 40px;
-  padding: 8px;
-  margin-top: -20px;
-  font: 10px sans-serif;
-  background: #ddd;
-  pointer-events: none;
-  text-align: center;
+/* Dialog window */
+#dialog {
+  border-color: #333;
+  border-radius: 5%;
+}
+#dialog p {
+  font-size: 20px;
+  margin-top: 4%;
+}
+#userInput {
+  border-color: #333;
+  border-radius: 5%;
+}
+/* button inside the dialog window */
+#plotButton {
+  margin-left: 38%;
 }
 
-#my_bar_chart {
-  display: flex;
-  justify-content: center;
-}
-
+/* containter that hold the pie and bar charts */
 #my_pie_chart {
   height: 500px;
   /* align-items: center; */
@@ -78,21 +64,42 @@ h1 {
   justify-content: center;
 }
 
+#my_bar_chart {
+  display: flex;
+  justify-content: center;
+}
+
+/* it hold the div that holds bar chart - theortiaclly this is unnecessary but I like the extra space */
 #box {
   height: 1000px;
 }
 
-#Title_pie {
-  margin-top: 30px;
+/* Tooltips for pie and bar charts */
+.tooltip_pie {
+  position: relative;
+  width: 100px;
+  height: 80px;
+  padding: 8px;
+  margin-top: -20px;
+  font: 15px sans-serif;
+  background: #ddd;
+  pointer-events: none;
   text-align: center;
-  font-size: 200%;
 }
 
-#Title_bar_chart {
+.tooltip_bar_chart {
+  position: relative;
+  width: 150px;
+  height: 60px;
+  padding: 8px;
+  margin-top: -20px;
+  font: 15px sans-serif;
+  background: #ddd;
+  pointer-events: none;
   text-align: center;
-  font-size: 200%;
 }
 
+/* for pie chart labelling */
 path.slice {
   stroke-width: 2px;
 }
@@ -104,6 +111,23 @@ polyline {
   fill: none;
 }
 
-#plotButton {
-  margin-left: 38%;
+/* title and subtitle for the charts */
+.my_title {
+  text-align: center;
+  font: small-caps 32px/1 sans-serif;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: large;
+  font-style: italic;
+}
+
+/* the information underneath the pie chart */
+#ExtraInfo {
+  text-align: center;
+  font-size: large;
+  font-style: italic;
+  color: black;
+  text-decoration: underline;
 }

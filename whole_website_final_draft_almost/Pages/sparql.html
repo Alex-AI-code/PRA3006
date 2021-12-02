@@ -2,21 +2,12 @@
 <html lang="en">
   <head>
     <title>SPARQL</title>
-    <meta charset="UTF-8" />
-    <!--swiper tool-->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
-    />
-    <!-- <link rel="stylesheet" href="style_Akiya.css" /> -->
-    <link rel="stylesheet" href="../styles/style_general.css" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!--below is the fonts from google fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,500&display=swap"
-      rel="stylesheet"
-    />
+    <meta charset="UTF-8" />
+
+    <!-- Load the styles -->
+    <link rel="stylesheet" href="../styles/style_general.css" />
+    <link rel="stylesheet" href="../styles/style_sparql.css" />
 
     <!-- For footer -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,14 +22,18 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
+
   <body class="myBody">
-    <!--preset header-->
+    <!--Header-->
     <header>
       <div class="header">
-        <h1>Programming in Life Sciences</h1>
-        <p>Different drug dosages for cancer</p>
+        <a href="home.html" style="color: white"
+          ><h1>Programming in Life Sciences</h1></a
+        >
+        <p class="subheader">Different drug dosages for cancer</p>
       </div>
 
+      <!-- Navigation bar -->
       <div class="topnav">
         <div class="topnav-centered">
           <a href="home.html">Home</a>
@@ -48,32 +43,88 @@
           <a href="about.html">About</a>
         </div>
       </div>
-      <div style="height: 1000px"></div>
-
-      <div class="footer-basic">
-        <footer>
-          <div class="social">
-            <a href="https://www.instagram.com"
-              ><i class="icon ion-social-instagram"></i
-            ></a>
-            <a href="https://twitter.com/home?lang=en"
-              ><i class="icon ion-social-twitter"></i
-            ></a>
-            <a href="https://www.facebook.com"
-              ><i class="icon ion-social-facebook"></i
-            ></a>
-          </div>
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <a href="https://github.com/Alex-AI-code/PRA3006">GitHub</a>
-            </li>
-          </ul>
-          <p class="copyright">PRA3006 © 2021</p>
-          <button class="backToTheTop">
-            <a href="#top">Back to the top</a>
-          </button>
-        </footer>
-      </div>
     </header>
+
+    <!-- Text -->
+    <div class="sparqlContainer">
+      <h2 class="my_h2">Wikidata</h2>
+      <p class="my_p">
+        Wikidata is a large database that stores their data in a Resource
+        Description Framework (RDF) format. This format creates a network of all
+        its datapoints, or items, where each individual item has a unique
+        identifier. Items are connected by their relationships to other items,
+        making it easy to find datapoints that share a particular feature or
+        belong to a certain category. In short, items are stored in triples,
+        composed of a subject (i.e. Item A), the predicate (i.e. proposed
+        relationship), and the object (i.e. Item B). That is the basis of how
+        RDF databases are structured and what allows users to explore the
+        relationship between datapoints.
+      </p>
+    </div>
+
+    <hr class="betweenSection" />
+
+    <!-- Text -->
+    <div class="sparqlContainer">
+      <h2 class="my_h2">Wikibase</h2>
+      <p class="my_p">
+        Wikibase is an entity of Wikidata that stores the metadata items found
+        on the database. This can include information such as references for
+        triples, allowing research to validify connections they find. For our
+        project, we wanted to find information about the exact units used for
+        the dosages of each breast/prostate cancer medication found on Wikidata.
+        This information was not readily available as an item but was stored as
+        metadata on Wikibase.
+      </p>
+    </div>
+
+    <hr class="betweenSection" />
+
+    <!-- Text -->
+    <div class="sparqlContainer">
+      <h2 class="my_h2">Making Sense of Databases SPARQL</h2>
+      <p class="my_p">
+        To find relationships between datapoints in online databases such as
+        Wikidata, we need to write a program, called a query, at will allow
+        users to access the data they need. SPARQL is a query language
+        specifically used for Wikidata, as well as other compatible bases. As an
+        example, we can create a SPAQRL query that looks for all datapoints
+        within a certain category, such as all biology related cancers within
+        the general category of cancer. Furthermore, we can adapt this SPARQL
+        query to also fetch data from other databases, such as Wikibase, within
+        the same query. Through this we could find our relevant medications on
+        Wikidata and use that list of items to find the units stored in
+        Wikibase. <br />
+        <br />
+        A summary of how our SPAQRL query retrieves data is as follows:
+      </p>
+      <img src="../otherimg/SPARQL_visual.png" alt="" />
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-basic">
+      <footer>
+        <div class="social">
+          <a href="https://www.instagram.com"
+            ><i class="icon ion-social-instagram"></i
+          ></a>
+          <a href="https://twitter.com/home?lang=en"
+            ><i class="icon ion-social-twitter"></i
+          ></a>
+          <a href="https://www.facebook.com"
+            ><i class="icon ion-social-facebook"></i
+          ></a>
+        </div>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="https://github.com/Alex-AI-code/PRA3006">GitHub</a>
+          </li>
+        </ul>
+        <div width="100%" style="text-align: center; margin-top: 1%">
+          <a id="backToTop" href="#top">Back to the top</a>
+        </div>
+        <p class="copyright">PRA3006 © 2021</p>
+      </footer>
+    </div>
   </body>
 </html>

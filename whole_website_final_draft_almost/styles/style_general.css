@@ -1,23 +1,45 @@
-h1 {
-  font-family: "Times New Roman", Times, serif;
-  text-align: center;
-}
+/*-----------------------General style----------------------*/
+/* The general style contains style for elements that most of the pages have that is: header, navigation bar, text, footer and buttons */
 
+/* Body */
 .myBody {
-  background-color: rgb(229, 252, 247);
+  background-color: hsl(60, 8%, 95%);
 }
 
-.paragraph {
-  font-family: "Courier New", Courier, monospace;
+/* Titles, subtitles, paragraphs, text overall */
+.my_h2 {
+  text-align: center;
+  font: small-caps 34px/1 sans-serif;
+  margin-top: 2%;
+}
+
+.my_p {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 1%;
+  line-height: 1.8;
+  text-align: justify;
+  font-family: Arial, serif;
+  font-size: 17px;
+}
+.subheader {
+  font: small-caps 24px/1 sans-serif;
+}
+
+/* The line between some sections */
+.betweenSection {
+  border: 5px solid #6cceba;
+  border-radius: 2px;
 }
 
 /* Header and Navigation Bar */
 .header {
   padding: 10px;
   text-align: center;
-  background: #10c5a1;
+  background: #1a9c80;
   color: white;
   font-size: 20px;
+  font: small-caps bold 24px/1 sans-serif;
 }
 
 .topnav {
@@ -58,6 +80,49 @@ h1 {
   float: none;
   position: relative;
   top: 25%;
+}
+
+/* Buttons */
+.NotAkiyaButtons {
+  background: #333;
+  color: #fff;
+  border: solid 2px;
+  position: relative;
+  font-size: 16px;
+  margin-right: 1%;
+  margin-left: 1%;
+  margin-top: 1%;
+  padding: 0 2em;
+  height: 50px;
+  cursor: pointer;
+  transition: 800ms ease all;
+  border-radius: 10px;
+}
+.NotAkiyaButtons:hover {
+  background: #fff;
+  color: #1aab8a;
+}
+.NotAkiyaButtons:before,
+.NotAkiyaButtons:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 1px;
+  width: 0px;
+  background: #1aab8a;
+  transition: 400ms ease all;
+}
+.NotAkiyaButtons:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+.NotAkiyaButtons:hover:before,
+.NotAkiyaButtons:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
 }
 
 /* Footer  */
@@ -117,23 +182,12 @@ h1 {
   margin-top: 15px;
   text-align: center;
   font-size: 13px;
-  color: rgb(49, 49, 49);
+  color: #4b4c4d;
   margin-bottom: 0;
 }
 
 /* Back to the Top Button */
-.backToTheTop {
-  margin: auto;
-  display: block;
-
-  background-color: white;
-  align-self: center;
-
-  color: black;
-  border: 2px solid #00fa21;
-}
-
-.backToTheTop:hover {
-  background-color: #91c41c;
-  color: white;
+#backToTop {
+  color: #4b4c4d;
+  height: 40px;
 }

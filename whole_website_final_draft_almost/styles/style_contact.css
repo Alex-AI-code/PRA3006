@@ -1,9 +1,16 @@
-/*----------------------Contact css-----------------------*/
+/*----------------------Contact page-----------------------*/
 
+/* override some options */
+.my_p {
+  font-style: italic;
+  text-align: center;
+}
+
+/* Contact box */
 /* we want the contact us box section to cover 80% */
 .container {
   width: 80%;
-  margin: 50px auto;
+  margin-bottom: 5%;
 }
 
 .contactBox {
@@ -69,6 +76,7 @@ label {
 
 .container p {
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .left_contact h3 {
