@@ -34,7 +34,7 @@ The code is divided into 6 different folders:
 
 The pages folder contains HTML files for each page of our website.
 The scripts folder contains 5 javascript programs, from which 3 are used for visualization (animated_barchart.js, better_pie_chart.js, CircleChart.js) while the other two (main.js and data.js) are used for making the query and processing + preparing the data respectively.
-The styles folder contains 6 different .css files. Each page has a different .css file (so 5 for each) and one .css file (style_general) that every page uses.
+The styles folder contains 6 different .css files. Each page has a different .css file (so 5 for each) and one .css file (style_general) that every page uses (namely the header and the footer).
 
 ## General flow of the code
 
