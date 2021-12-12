@@ -15,7 +15,7 @@ This code is a webpage that analyses the main types of treatment used for differ
 2. Run homepage HTML file...
 3. Explore the drugs against cancer and their daily dosages ...
 
-Possible issues and known bugs:
+## Possible issues and known bugs:
 
 - It is possible to not get a response from the server while making the query, if that happens the website will work however the visualizations will be unavailable.
 - There is a rare bug which we encountered only once but it's worth mentioning since all the other bugs were eliminated: while going over the drugs on the drugInfo page small information can appear underneath the leftmost card that says: "This is the last slide". As already mentioned we encounter this only once and we were unable to reproduce this bug but you have been warned.
