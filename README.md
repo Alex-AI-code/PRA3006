@@ -48,7 +48,7 @@ After the head is executed the body with most of its content is rendered on the 
 
 Upon using the + button the user gets a dialogue window in which they can make their query (it is very limited as the only part of the query that the user can influence is the search term which in the case of this website needs to be cancer). After using the search button and making a successful query, the user is informed about the results by an alert and gets access to plot the results. The new plot button works the same as all the other buttons for drawing visualizations.
 
-The user can also interact with some other elements of this page like the navigation bar, bars of the bar chart, footer icons or text upon which the user will be redirected to the specified location. *some icons, mainly twitter, are not linked for privacy
+The user can also interact with some other elements of this page like the navigation bar, bars of the bar chart, footer icons or text upon which the user will be redirected to the specified location. *some icons, mainly twitter, are not linked for privacy.
 
 ## druginfo.html flow
 
@@ -60,9 +60,9 @@ The circle chart is rendered only when the user interacts with the button undern
 
 ## Adding new cancer to the website
 
-This is relatively simple to achieve - in the home.html a new button needs to be added with the name of cancer. This button will use the same functions as all the other buttons for cancers but it will take as input the data for this specific cancer. To get this data the Q term for this cancer needs to be added to the main_terms variable in the main.js. After that in the data.js variables for new cancer need to be initialized. Those are: new_cancer_str (which actually is a string inside of an array; top of the file), new_cancer_forPie, dominant_new_cancer, bar_chart_data_new_cancer and bar_chart_new_cancer_title (all of which can be found in the main() function of the data.js). This will produce a visualization for new cancer (pie, bar and circle charts). Keep in mind that if the new_cancer does not have any drugs used to treat it, or those drugs won't have a specified daily dosage property then pie and bar charts will be empty.
+This is relatively simple to achieve - in the home.html a new button needs to be added with the name of cancer. This button will use the same functions as all the other buttons for cancers but it will take as input the data for this specific cancer. To get this data the Q term for this cancer needs to be added to the main_terms variable in the main.js. After that in the data.js variables for new cancer need to be initialized. Those are: new_cancer_str (which actually is a string inside of an array; top of the file), new_cancer_forPie, dominant_new_cancer, bar_chart_data_new_cancer and bar_chart_new_cancer_title (all of which can be found in the main() function of the data.js). This will produce a visualization for new cancer (pie, bar and circle charts). Keep in mind that if the new_cancer does not have any drugs used to treat it, or those drugs does not contain the specified daily dosage property, then pie and bar charts will be empty.
 
-Additionally adding new information on the drugs of new cancer needs to be done manually. That means that in the druginfo.html inside the "swiper-wrapper" div a new div "card" needs to be added for each drug of new cancer. There the name, image and text have to be manually specified by the programmer.
+Additionally, adding new information on the drugs of new cancer needs to be done manually. That means that in the druginfo.html inside the "swiper-wrapper" div a new div "card" needs to be added for each drug of new cancer. There the name, image and text have to be manually specified by the programmer (since the purpose of these drug cards are to summerise and provide quick info to the user, instead of loading with information).
 
 ## Modifying the query
 
