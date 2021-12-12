@@ -42,7 +42,7 @@ For the following pages the flow of the code is relatively straightforward as it
 
 ## home.html flow
 
-First, all the necessary files are loaded in the head of the HTML file, this includes making the query and preparing the data for the visualizations (last line of the head - main()). Only the d3 libraries are loaded a bit later in the code because of the compatibility issues of the pie and bar charts (see comments in the home.html for more explanation).
+First, all the necessary files are loaded in the head of the HTML file, this includes making the query and preparing the data for the visualizations (last line of the head - main()). Only the d3 libraries are loaded a bit later in the code because of the compatibility issues of the pie and bar charts (see comments in the home.html for more explanation, line 13-16).
 
 After the head is executed the body with most of its content is rendered on the website. Only the graphs with information about them (and a dialogue window) are not loaded as those are only rendered whenever the user chooses to interact with one of the given buttons. Once a button was interacted with it executes two functions: updateGraphs() and VisInfo(). The arguments for those functions depend on which button was used but overall those two functions take as input data for the pie and bar charts as well text for the titles, subtitles and any other additional text.
 
