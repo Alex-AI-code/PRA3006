@@ -120,7 +120,7 @@ function extract_drug_info(data, cancer_labels, dominant_unit) {
           case "gram":
             switch (data[i]["unitsLabel"]) {
               case "milligram":
-                dose = data[i]["dose"] / 1000 ** 3;
+                dose = data[i]["dose"] / 10 ** 3;
                 break;
               case "microgram":
                 dose = data[i]["dose"] / 10 ** 6;
