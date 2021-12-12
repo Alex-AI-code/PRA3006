@@ -48,7 +48,7 @@ After the head is executed the body with most of its content is rendered on the 
 
 Upon using the + button the user gets a dialogue window in which they can make their query (it is very limited as the only part of the query that the user can influence is the search term which in the case of this website needs to be cancer). After using the search button and making a successful query, the user is informed about the results by an alert and gets access to plot the results. The new plot button works the same as all the other buttons for drawing visualizations.
 
-The user can also interact with some other elements of this page like the navigation bar, bars of the bar chart, footer icons or text upon which the user will be redirected to the specified location.
+The user can also interact with some other elements of this page like the navigation bar, bars of the bar chart, footer icons or text upon which the user will be redirected to the specified location. *some icons, mainly twitter, are not linked for privacy
 
 ## druginfo.html flow
 
